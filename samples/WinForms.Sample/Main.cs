@@ -454,7 +454,14 @@ namespace WinForms.Sample
                 }.ToByteString(),
                 PayloadType = (int)ProtoOAPayloadType.ProtoOaClosePositionReq,
             };
-
+             message = new ProtoMessage
+            {
+                Payload = new ProtoOAGetPositionUnrealizedPnLReq
+                {
+                    CtidTraderAccountId = _accountID,
+                }.ToByteString(),
+                PayloadType = (int)ProtoOAPayloadType.ProtoOaGetPositionUnrealizedPnlReq,
+            };
             Transmit(message);
         }
 
